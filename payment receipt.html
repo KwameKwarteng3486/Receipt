@@ -206,39 +206,40 @@
       </div>
 
       <!-- Receipt Display -->
-      <div class="col-md-6">
-        <div class="receipt p-4 shadow d-none" id="receiptSection">
-          <h2 class="text-center">PHARMACY</h2>
-          <div class="mb-3">
-            <strong>From:</strong> <span id="outputBilledTo"></span>
-          </div>
-          <div class="mb-3">
-            <strong>Date:</strong> <span id="outputDate"></span>
-          </div>
-          <table class="table table-bordered mt-3">
-            <thead>
-              <tr>
-                <th>Description</th>
-                <th>Quantity</th>
-                <th>Unit Price (GHS)</th>
-                <th>Total (GHS)</th>
-              </tr>
-            </thead>
-            <tbody id="receiptItems"></tbody>
-            <tfoot>
-              <tr>
-                <th colspan="3" class="text-end">Grand Total:</th>
-                <th id="outputGrandTotal">0.00</th>
-              </tr>
-            </tfoot>
-          </table>
-          <div class="text-center mt-3">
-            <button class="btn btn-primary" id="printReceipt">Print Receipt</button>
-          </div>
-        </div>
-      </div>
+<div class="col-md-6">
+  <div class="receipt p-4 shadow d-none" id="receiptSection">
+    <div class="text-center">
+      <img src="logo.JPG" alt="Panacea Pharmacy Logo" style="width: 100px; height: 100px; margin-bottom: 20px; border-radius: 50%;">
+      <h2>PHARMACY</h2>
+    </div>
+    <div class="mb-3">
+      <strong>From:</strong> <span id="outputBilledTo"></span>
+    </div>
+    <div class="mb-3">
+      <strong>Date:</strong> <span id="outputDate"></span>
+    </div>
+    <table class="table table-bordered mt-3">
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Quantity</th>
+          <th>Unit Price (GHS)</th>
+          <th>Total (GHS)</th>
+        </tr>
+      </thead>
+      <tbody id="receiptItems"></tbody>
+      <tfoot>
+        <tr>
+          <th colspan="3" class="text-end">Grand Total:</th>
+          <th id="outputGrandTotal">0.00</th>
+        </tr>
+      </tfoot>
+    </table>
+    <div class="text-center mt-3">
+      <button class="btn btn-primary" id="printReceipt">Print Receipt</button>
     </div>
   </div>
+</div>
 
   <script>
     // Add item row
