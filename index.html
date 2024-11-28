@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipt Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .receipt-header {
+            background-color: #f0f4ff;
+            padding: 20px;
+            text-align: center;
+        }
+        .receipt-number {
+            text-align: right;
+        }
+        .section-title {
+            background-color: #e1e5f2;
+            padding: 10px;
+        }
+        .signature {
+            margin-top: 30px;
+            border-top: 1px solid #000;
+            width: 150px;
+        }
+        .total {
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+        .toggle-section {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Form Section -->
+    <div id="form-section">
+        <h2 class="mt-4">Fill in the Receipt Details</h2>
+        <form id="receiptForm">
+            <h5 class="section-title">RECEIVED FROM</h5>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter name" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="text" class="form-control" id="phone" placeholder="Enter phone number" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" class="form-control" id="address" placeholder="Enter address" required>
+            </div>
+
+            <h5 class="section-title">ORDER DETAILS</h5>
+            <div class="form-group">
+                <label for="description1">Item 1 Description</label>
+                <input type="text" class="form-control" id="description1" placeholder="e.g., Food $10.00 x 2" required>
+            </div>
+            <div class="form-group">
+                <label for="amount1">Item 1 Amount</label>
+                <input type="number" class="form-control" id="amount1" placeholder="Enter amount" required>
+            </div>
+
+            <div class="form-group">
+                <label for="description2">Item 2 Description</label>
+                <input type="text" class="form-control" id="description2" placeholder="e.g., Pillow $5.00 x 10" required>
+            </div>
+            <div class="form-group">
+                <label for="amount2">Item 2 Amount</label>
+                <input type="number" class="form-control" id="amount2" placeholder="Enter amount" required>
+            </div>
+
+            <div class="form-group">
+                <label for="description3">Item 3 Description</label>
+                <input type="text" class="form-control" id="description3" placeholder="e.g., Wine $12.00 x 20" required>
+            </div>
+            <div class="form-group">
+                <label for="amount3">Item 3 Amount</label>
+                <input type="number" class="form-control" id="amount3" placeholder="Enter amount" required>
+            </div>
+
+            <div class="form-group">
+                <label for="description4">Item 4 Description</label>
+                <input type="text" class="form-control" id="description4" placeholder="e.g., Wine $12.00 x 20" required>
+            </div>
+            <div class="form-group">
+                <label for="amount4">Item 4 Amount</label>
+                <input type="number" class="form-control" id="amount4" placeholder="Enter amount" required>
+            </div>
+
+            <div class="form-group">
+                <label for="description5">Item 5 Description</label>
+                <input type="text" class="form-control" id="description5" placeholder="e.g., Wine $12.00 x 20" required>
+            </div>
+            <div class="form-group">
+                <label for="amount5">Item 5 Amount</label>
+                <input type="number" class="form-control" id="amount5" placeholder="Enter amount" required>
+            </div>
+
+            <div class="form-group">
+                <label for="paymentMethod">Payment Method</label>
+                <input type="text" class="form-control" id="paymentMethod" placeholder="Enter payment method" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Generate Receipt</button>
+        </form>
+    </div>
+
+    <!-- Receipt Preview Section -->
+    <div id="receipt-section" class="toggle-section">
+        <div class="receipt-header">
+            <h1>Receipt</h1>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                
+                <h5 class="section-title">RECEIVED FROM</h5>
+                <p><strong>Name:</strong> <span id="r-name"></span></p>
+                <p><strong>Phone Number:</strong> <span id="r-phone"></span></p>
+                <p><strong>Email:</strong> <span id="r-email"></span></p>
+                <p><strong>Address:</strong> <span id="r-address"></span></p>
+            </div>
+            <div class="col-md-6 receipt-number">
+                <p><strong>No:</strong> R-00125</p>
+                <p><strong>Date:</strong> <span id="r-date"></span></p>
+            </div>
+        </div>
+
+        <h5 class="section-title">ORDER DETAILS</h5>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="r-description1"></td>
+                    <td id="r-amount1"></td>
+                </tr>
+                <tr>
+                    <td id="r-description2"></td>
+                    <td id="r-amount2"></td>
+                </tr>
+                <tr>
+                    <td id="r-description3"></td>
+                    <td id="r-amount3"></td>
+                </tr>
+                <tr>
+                    <td id="r-description4"></td>
+                    <td id="r-amount4"></td>
+                </tr>
+                <tr>
+                    <td id="r-description5"></td>
+                    <td id="r-amount5"></td>
+                </tr>
+                <tr>
+                    <td class="text-right total">Total</td>
+                    <td class="total" id="r-total"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Payment Method:</strong> <span id="r-paymentMethod"></span></p>
+
+        <p><strong>Signature:</strong></p>
+        <div class="signature"></div>
+        <button class="btn btn-success" onclick="printReceipt()">Print Receipt</button>
+        <button class="btn btn-secondary" onclick="toggleSections()">Go Back</button>
+    </div>
+</div>
+
+<script>
+    // Toggle between form and receipt
+    function toggleSections() {
+        document.getElementById("form-section").classList.toggle("toggle-section");
+        document.getElementById("receipt-section").classList.toggle("toggle-section");
+    }
+
+    // On form submit, generate the receipt
+    document.getElementById('receiptForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        // Get form values
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const email = document.getElementById('email').value;
+        const address = document.getElementById('address').value;
+        const description1 = document.getElementById('description1').value;
+        const amount1 = parseFloat(document.getElementById('amount1').value).toFixed(2);
+        const description2 = document.getElementById('description2').value;
+        const amount2 = parseFloat(document.getElementById('amount2').value).toFixed(2);
+        const description3 = document.getElementById('description3').value;
+        const amount3 = parseFloat(document.getElementById('amount3').value).toFixed(2);
+        const description4 = document.getElementById('description4').value;
+        const amount4 = parseFloat(document.getElementById('amount4').value).toFixed(2);
+        const description5 = document.getElementById('description5').value;
+        const amount5 = parseFloat(document.getElementById('amount5').value).toFixed(2);
+        const paymentMethod = document.getElementById('paymentMethod').value;
+
+        // Calculate total
+        const total = (parseFloat(amount1) + parseFloat(amount2) + parseFloat(amount3) + parseFloat(amount4) + parseFloat(amount5)).toFixed(2);
+
+        // Set receipt values
+        document.getElementById('r-name').textContent = name;
+        document.getElementById('r-phone').textContent = phone;
+        document.getElementById('r-email').textContent = email;
+        document.getElementById('r-address').textContent = address;
+        document.getElementById('r-description1').textContent = description1;
+        document.getElementById('r-amount1').textContent = '$' + amount1;
+        document.getElementById('r-description2').textContent = description2;
+        document.getElementById('r-amount2').textContent = '$' + amount2;
+        document.getElementById('r-description3').textContent = description3;
+        document.getElementById('r-amount3').textContent = '$' + amount3;
+        document.getElementById('r-description4').textContent = description4;
+        document.getElementById('r-amount4').textContent = '$' + amount4;
+        document.getElementById('r-description5').textContent = description5;
+        document.getElementById('r-amount5').textContent = '$' + amount5;
+        document.getElementById('r-total').textContent = '$' + total;
+        document.getElementById('r-paymentMethod').textContent = paymentMethod;
+        document.getElementById ('r-date').textContent = new Date().toLocaleDateString();
+
+    // Toggle to receipt
+    toggleSections();
+});
+
+// Print the receipt
+function printReceipt() {
+    window.print();
+}
+</script>
+</body>
+</html>
