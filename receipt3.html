@@ -94,31 +94,13 @@
             </div>
 
             <div class="form-group">
-                <label for="description4">Item 4 Description</label>
-                <input type="text" class="form-control" id="description4" placeholder="e.g., Wine $12.00 x 20" required>
-            </div>
-            <div class="form-group">
-                <label for="amount4">Item 4 Amount</label>
-                <input type="number" class="form-control" id="amount4" placeholder="Enter amount" required>
-            </div>
-
-            <div class="form-group">
-                <label for="description5">Item 5 Description</label>
-                <input type="text" class="form-control" id="description5" placeholder="e.g., Wine $12.00 x 20" required>
-            </div>
-            <div class="form-group">
-                <label for="amount5">Item 5 Amount</label>
-                <input type="number" class="form-control" id="amount5" placeholder="Enter amount" required>
-            </div>
-
-            <div class="form-group">
                 <label for="paymentMethod">Payment Method</label>
                 <input type="text" class="form-control" id="paymentMethod" placeholder="Enter payment method" required>
             </div>
 
             <button type="submit" class="btn btn-primary">Generate Receipt</button>
-            <a href="receipt3.html" class="btn btn-secondary">3 items</a>
             <a href="payment receipt.html" class="btn btn-danger">1 item</a>
+            <a href="index.html" class="btn btn-secondary">5 items</a>
         </form>
     </div>
 
@@ -165,14 +147,6 @@
                     <td id="r-amount3"></td>
                 </tr>
                 <tr>
-                    <td id="r-description4"></td>
-                    <td id="r-amount4"></td>
-                </tr>
-                <tr>
-                    <td id="r-description5"></td>
-                    <td id="r-amount5"></td>
-                </tr>
-                <tr>
                     <td class="text-right total">Total</td>
                     <td class="total" id="r-total"></td>
                 </tr>
@@ -211,14 +185,10 @@
         const amount2 = parseFloat(document.getElementById('amount2').value).toFixed(2);
         const description3 = document.getElementById('description3').value;
         const amount3 = parseFloat(document.getElementById('amount3').value).toFixed(2);
-        const description4 = document.getElementById('description4').value;
-        const amount4 = parseFloat(document.getElementById('amount4').value).toFixed(2);
-        const description5 = document.getElementById('description5').value;
-        const amount5 = parseFloat(document.getElementById('amount5').value).toFixed(2);
         const paymentMethod = document.getElementById('paymentMethod').value;
 
         // Calculate total
-        const total = (parseFloat(amount1) + parseFloat(amount2) + parseFloat(amount3) + parseFloat(amount4) + parseFloat(amount5)).toFixed(2);
+        const total = (parseFloat(amount1) + parseFloat(amount2) + parseFloat(amount3)).toFixed(2);
 
         // Set receipt values
         document.getElementById('r-name').textContent = name;
@@ -232,10 +202,6 @@
         document.getElementById('r-amount2').textContent = '$' + amount2;
         document.getElementById('r-description3').textContent = description3;
         document.getElementById('r-amount3').textContent = '$' + amount3;
-        document.getElementById('r-description4').textContent = description4;
-        document.getElementById('r-amount4').textContent = '$' + amount4;
-        document.getElementById('r-description5').textContent = description5;
-        document.getElementById('r-amount5').textContent = '$' + amount5;
         document.getElementById('r-total').textContent = '$' + total;
         document.getElementById('r-paymentMethod').textContent = paymentMethod;
 
